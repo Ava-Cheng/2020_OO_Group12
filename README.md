@@ -58,7 +58,8 @@
 
 ### PERT/CPM圖：
 
-![](https://i.imgur.com/3lIXoHu.png)
+![](https://i.imgur.com/m1bbcP1.png)
+
 
 
 
