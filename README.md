@@ -54,10 +54,11 @@
 ---
 
 ### 甘特圖：
-![](https://i.imgur.com/UXdGbpI.jpg)
+![](https://i.imgur.com/atA4hKF.jpg)
 
 ### PERT/CPM圖：
 
+![](https://i.imgur.com/3lIXoHu.png)
 
 
 
