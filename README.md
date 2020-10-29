@@ -59,7 +59,7 @@
 ---
 
 ### 功能分解圖(functional decomposition diagram, FDD)：
-![](https://i.imgur.com/8dwINwx.png)
+![](https://i.imgur.com/jFztvbO.png)
 
 ---
 
@@ -145,4 +145,3 @@
 |先決條件|點選最新消息|
 |後置條件|顯示最新消息公告頁面|
 |假設|無|
-
