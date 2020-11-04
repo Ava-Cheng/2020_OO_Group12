@@ -145,3 +145,13 @@
 |先決條件|點選最新消息|
 |後置條件|顯示最新消息公告頁面|
 |假設|無|
+
+---
+
+### DFD圖
+#### 系統環境圖 (DFD)
+![](https://i.imgur.com/ivjq1VU.png)
+
+
+#### 繪製DFD 圖0
+![](https://i.imgur.com/wKntL0H.png)
