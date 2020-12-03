@@ -1,6 +1,7 @@
 # 2020_OO_Group12
 系統分析與設計課程
 
+
 ### 專題題目：神明.com
 
 ### 專案組成
@@ -159,7 +160,7 @@
 ---
 
 ### UML 類別圖(class Diagram)
-![](https://i.imgur.com/lXkLPav.jpg)
+![](https://i.imgur.com/7yYVMiB.jpg)
 
 ### 循序圖與活動圖 (須至少有三項以上的使用案例，每個使用案例一個循序圖與活動圖)
 #### 人員管理
@@ -179,3 +180,25 @@
 ![](https://i.imgur.com/BEmVjXQ.png)
 ##### 活動圖
 ![](https://i.imgur.com/aPgu6Ja.jpg)
+
+---
+
+### 分鏡板(storyboard) 的形式向使用者展示初始的螢幕設計:
+* 可以利用手繪或軟體繪製
+* 清楚標示所有輸入的欄位之資料型態與驗證規則
+* 列出所有螢幕與報表列印的欄位之名稱與功能
+![](https://i.imgur.com/WWsDWGI.png)
+![](https://i.imgur.com/SHAJMeV.png)
+![](https://i.imgur.com/a4KwgAI.png)
+![](https://i.imgur.com/TYkZTSq.png)
+![](https://i.imgur.com/epgDsjg.png)
+![](https://i.imgur.com/R9Zj2Bz.png)
+![](https://i.imgur.com/zadaxDD.png)
+![](https://i.imgur.com/G0E0t9Y.png)
+![](https://i.imgur.com/fEUZvag.png)
+![](https://i.imgur.com/uj0KZSk.png)
+![](https://i.imgur.com/Xqr2KtB.png)
+![](https://i.imgur.com/9l0Tp5W.png)
+![](https://i.imgur.com/iLS4IRo.png)
+![](https://i.imgur.com/WaHWMlQ.png)
+![](https://i.imgur.com/t97pujb.png)
