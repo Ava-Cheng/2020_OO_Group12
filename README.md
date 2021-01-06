@@ -3,7 +3,7 @@
 
 
 
-### 專題題目：神明.com
+### 專題題目：觀音媽達康
 
 ### 專案組成
 #### 組長：鄭育存
@@ -13,7 +13,8 @@
 |鄭育存|戴珮筑|
 |:----:|:----:|
 |系統架構/流程規劃|介面設計|
-|資料庫、API設計|文件撰寫、PPT製作|
+|文件撰寫、PPT製作|文件撰寫、PPT製作|
+|資料庫、API設計|數位農民曆實作|
 |LineBot實作|數位光明燈實作|
 |報告|報告|
 
@@ -30,7 +31,7 @@
  
 因顧及信奉民間信仰的各種不同族群，例如長青族在 Line 上經常採用語音留言的方式傳遞訊息，故需提供文字或語音留言的使用方法。另外採用雲端的特點在於方便管理系統所需之相關資料，並提供了完善的維運機制協助我們管理資料及程式。
 
-綜上所述，本團隊希望結合傳統民間信仰以及聊天機器人(Chat Bot)，並且運用自然語言處理技術建構出一套虛擬廟公系統——「神明.com」，使聊天機器人作為廟公虛擬代理人。以期所製作之系統能代替廟公自動回覆日常之結構化問題，且能根據各廟宇所定之祭拜日期推播資訊，減低廟公處理事務之人力與時間成本。信徒也能利用「神明.com」點數位光明燈，並獲取即時的祭拜消息及查閱農民曆資訊。
+綜上所述，本團隊希望結合傳統民間信仰以及聊天機器人(Chat Bot)，並且運用自然語言處理技術建構出一套虛擬廟公系統——「觀音媽達康」，使聊天機器人作為廟公虛擬代理人。以期所製作之系統能代替廟公自動回覆日常之結構化問題，且能根據各廟宇所定之祭拜日期推播資訊，減低廟公處理事務之人力與時間成本。信徒也能利用「觀音媽達康」點數位光明燈，並獲取即時的祭拜消息及查閱農民曆資訊。
 
 ---
 
@@ -61,12 +62,12 @@
 ---
 
 ### 功能分解圖(functional decomposition diagram, FDD)：
-![](https://i.imgur.com/jFztvbO.png)
+![](https://i.imgur.com/tauwaKP.png)
 
 ---
 
 # 需求分析描述：
-神明.com系統的需求分析簡述如下：    
+觀音媽達康系統的需求分析簡述如下：    
 （1）信徒或廟公透過點選最新消息，取得廟宇最新公告消息。    
 （2）信徒或廟公可以透過數位農民曆查詢每日宜、不宜事項，供參考使用。    
 （3）信徒可以透過文字對話的方式，詢問關於廟宇歷史、禁忌等相關問題。    
@@ -85,7 +86,8 @@
 
 ### 使用案例圖與使用案例說明：
 #### 使用案例圖：
-![](https://i.imgur.com/RGc7nIY.png)
+![](https://i.imgur.com/1RGOzo5.png)
+
 
 #### 使用案例說明：
 |使用案例名稱|人員管理|
@@ -152,7 +154,7 @@
 
 ### DFD圖
 #### 系統環境圖 (DFD)
-![](https://i.imgur.com/ivjq1VU.png)
+![](https://i.imgur.com/xg6tjTK.png)
 
 
 #### 繪製DFD 圖0
@@ -161,26 +163,29 @@
 ---
 
 ### UML 類別圖(class Diagram)
-![](https://i.imgur.com/7yYVMiB.jpg)
+![](https://i.imgur.com/vDZoW5b.png)
+
 
 ### 循序圖與活動圖 (須至少有三項以上的使用案例，每個使用案例一個循序圖與活動圖)
 #### 人員管理
 ##### 循序圖
-![](https://i.imgur.com/BoYNBGV.png)
+![](https://i.imgur.com/aEBZ0Hg.png)
+
 ##### 活動圖
-![](https://i.imgur.com/2ZF6mcl.png)
+![](https://i.imgur.com/5bOUMOo.png)
 
 #### 信徒問答
 ##### 循序圖
-![](https://i.imgur.com/2XHSv7Y.png)
+![](https://i.imgur.com/r5fU6Cs.png)
 ##### 活動圖
-![](https://i.imgur.com/wWixEwb.png)
+![](https://i.imgur.com/wSy63Xz.png)
 
 #### 數位農民曆
 ##### 循序圖
-![](https://i.imgur.com/BEmVjXQ.png)
+![](https://i.imgur.com/rqj44nN.png)
+
 ##### 活動圖
-![](https://i.imgur.com/aPgu6Ja.jpg)
+![](https://i.imgur.com/LwQtjCD.png)
 
 ---
 
@@ -188,23 +193,26 @@
 * 可以利用手繪或軟體繪製
 * 清楚標示所有輸入的欄位之資料型態與驗證規則
 * 列出所有螢幕與報表列印的欄位之名稱與功能
-![](https://i.imgur.com/IE6pgfI.png)
-![](https://i.imgur.com/6qGfxjE.png)
-![](https://i.imgur.com/AFZorrs.png)
-![](https://i.imgur.com/mfAiFmI.png)
-![](https://i.imgur.com/328B8S4.png)
-![](https://i.imgur.com/Jt8NnpS.png)
-![](https://i.imgur.com/pibhrSe.png)
-![](https://i.imgur.com/SeSHxW0.png)
-![](https://i.imgur.com/iu8DZih.png)
-![](https://i.imgur.com/U2X6bc6.png)
-![](https://i.imgur.com/2LNkDZB.png)
-![](https://i.imgur.com/UQloMlp.png)
-![](https://i.imgur.com/i16oOs6.png)
-![](https://i.imgur.com/VCeKN8s.png)
-![](https://i.imgur.com/23YpdC5.png)
+![](https://i.imgur.com/J0BVLZ9.png)
+![](https://i.imgur.com/n8exJjm.png)
+![](https://i.imgur.com/d4fZiqk.png)
+![](https://i.imgur.com/pu6a599.png)
+![](https://i.imgur.com/fX1n5iZ.png)
+![](https://i.imgur.com/h80gLef.png)
+![](https://i.imgur.com/WGIl1td.png)
+![](https://i.imgur.com/qCVWjVh.png)
+![](https://i.imgur.com/BYWTf5k.png)
+![](https://i.imgur.com/dgAaOiL.png)
+![](https://i.imgur.com/uD5cApN.png)
+![](https://i.imgur.com/DQyLYQ3.png)
+![](https://i.imgur.com/SRTVX3V.png)
+![](https://i.imgur.com/UCYZclH.png)
+![](https://i.imgur.com/anD7B8A.png)
+![](https://i.imgur.com/R4atgw1.png)
+
 
 ---
 
 ### 實體關係圖(entity-relationship diagram, ERD)
-![](ERD.jpg)
+![](https://i.imgur.com/tpoozp7.jpg)
+
