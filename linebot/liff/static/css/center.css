@@ -1,0 +1,446 @@
+.center {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    /* margin-bottom: -200px; */
+}
+
+li {
+    line-height: 3;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    text-align: justify;
+    position: relative;
+    border-color: #c7cdbe;
+}
+
+.list {
+    font-family: Helvetica, Arial, '微軟正黑體', sans-serif;
+    font-size: 1.1rem;
+    clear: both;
+    margin: 15px auto;
+    width: auto;
+
+}
+
+.list li>a {
+    display: block;
+    padding: .7em 8em 1em 5em;
+    color: #3f4534;
+    margin-left: 2em;
+    /* max-width: 380px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+    .list li:nth-child(even) {
+        background: #f6f6f6;
+    }
+    .list {
+        border: none;
+    }
+    .list ul li>a {
+        padding-right: 1em;
+    }
+    .list ul li .numb {
+        min-width: 1em;
+        margin-left: -4.4em;
+    }
+    .list ul li .date, .list ul li time {
+        margin-left: 1em;
+        /* position: static; */
+        display: inline-block;
+    }
+    .date {
+        font-size: 14px;
+        min-width: max-content;
+        vertical-align: bottom;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 4px;
+    }
+    .list table {
+        width: 96%;
+        margin: 0 auto;
+        line-height: 1.6em;
+    }
+    .list tr {
+        display: block;
+        position: relative;
+        border: 1px solid #999;
+        padding: 0;
+        margin: 0 0 15px;
+    }
+    .list tr:first-child {
+        display: none;
+    }
+    .list th {
+        display: none;
+    }
+    .list td {
+        display: block;
+        padding: .7em .5em .5em;
+        margin: 0;
+        text-align: left;
+        max-width: none
+    }
+    .list td:last-child {
+        border: none;
+    }
+    .list table tr:last-child td {
+        border-bottom: 1px dotted #ccc;
+    }
+    .list table tr:last-child td:last-child {
+        border: none
+    }
+    .list:not(.profileList) td:empty {
+        display: none;
+    }
+    .list tr:nth-child(odd) {
+        background-color: transparent;
+    }
+    .list td:before {
+        content: attr(data-title) '：';
+        display: inline-block;
+        color: #999;
+        vertical-align: top;
+    }
+    .list td[data-title="序號"]:before {
+        display: none;
+    }
+    .list td[data-title="序號"] {
+        float: right;
+        margin: 0 0 0 .5em;
+        /* position:absolute;top:0;right:0; */
+        min-width: 1.4em;
+        height: 1.2em;
+        line-height: .9em;
+        background: #5d666f;
+        color: #fff;
+        font-size: 1.2em;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, .4) 0 0 10px;
+        border: none !important;
+    }
+    /*.list td[data-title="序號"] + td{padding-right:4em;}*/
+    .list td.title a {
+        font-size: 1.25em;
+    }
+    .list td span {
+        display: inline;
+    }
+    .list td .fileType {
+        vertical-align: middle;
+        margin: 0;
+    }
+    .list.poll tr {
+        padding: .4em .5em .3em;
+    }
+    .list.poll td {
+        margin: 0;
+    }
+    /*.list.poll td .from, .list.poll td .date{display:none;}*/
+    .list.poll td.title {
+        display: block;
+    }
+    .list.org tr {
+        overflow: hidden;
+    }
+    .list.org td, .list.org .org2nd td, .list.org tr:last-child td {
+        display: inline-block;
+        border: none;
+        line-height: 48px;
+    }
+    .list.org .org2nd td:first-child {
+        padding-left: 8px;
+        font-size: 1em;
+    }
+    .list.org td:first-child {
+        text-align: center;
+        line-height: 1.8em;
+    }
+    .list.org td:before {
+        display: none;
+    }
+    .list.org td:first-child, .list.org .org2nd td:first-child, .list.org tr:last-child td:first-child {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .list.org td:last-child {
+        float: right;
+    }
+    .list.schedule {
+        margin: 1em 0;
+    }
+    .list.schedule table {
+        border-collapse: collapse;
+    }
+    .schedule table caption {
+        font-size: 1em;
+        margin-top: .5em;
+    }
+    .navPrev {
+        left: 3%;
+    }
+    .navNext {
+        right: 3%;
+    }
+    .list.schedule th {
+        display: none;
+    }
+    .list.schedule td, .list.schedule table tr:last-child td {
+        display: block;
+        border: none;
+    }
+    .list.schedule td.date {
+        border-bottom: 1px solid #999 !important;
+        background: #f2f6f7;
+    }
+    .list.schedule td.date em {
+        display: inline-block;
+        margin: .1em .6em 0 0;
+    }
+    .list.schedule td:before {
+        display: none;
+    }
+    .list.schedule td ul li a {
+        padding: .5em .5em .4em;
+    }
+    .nextPage {
+        display: inline;
+        font-size: 0;
+    }
+    .list .dsIcon {
+        display: inline-block;
+    }
+    .list .dsIcon li a {
+        padding: 0;
+    }
+    .numb {
+        list-style: none;
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #3f4534;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: right;
+        margin: 0 .4em 0 0em;
+        padding-left: 10px;
+    }
+}
+
+@media screen and (min-width:801px) and (max-width: 1024px) {
+    .list li:nth-child(even) {
+        background: #f6f6f6;
+    }
+    .list {
+        border: none;
+    }
+    .list ul li>a {
+        padding-right: 1em;
+    }
+    .list ul li .numb {
+        min-width: 1em;
+        margin-left: -4.4em;
+    }
+    .list ul li .date, .list ul li time {
+        margin-left: 1em;
+        /* position: static; */
+        display: inline-block;
+    }
+    .date {
+        font-size: 14px;
+        min-width: max-content;
+        vertical-align: bottom;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 4px;
+    }
+    .list table {
+        width: 96%;
+        margin: 0 auto;
+        line-height: 1.6em;
+    }
+    .list tr {
+        display: block;
+        position: relative;
+        border: 1px solid #999;
+        padding: 0;
+        margin: 0 0 15px;
+    }
+    .list tr:first-child {
+        display: none;
+    }
+    .list th {
+        display: none;
+    }
+    .list td {
+        display: block;
+        padding: .7em .5em .5em;
+        margin: 0;
+        text-align: left;
+        max-width: none
+    }
+    .list td:last-child {
+        border: none;
+    }
+    .list table tr:last-child td {
+        border-bottom: 1px dotted #ccc;
+    }
+    .list table tr:last-child td:last-child {
+        border: none
+    }
+    .list:not(.profileList) td:empty {
+        display: none;
+    }
+    .list tr:nth-child(odd) {
+        background-color: transparent;
+    }
+    .list td:before {
+        content: attr(data-title) '：';
+        display: inline-block;
+        color: #999;
+        vertical-align: top;
+    }
+    .list td[data-title="序號"]:before {
+        display: none;
+    }
+    .list td[data-title="序號"] {
+        float: right;
+        margin: 0 0 0 .5em;
+        /* position:absolute;top:0;right:0; */
+        min-width: 1.4em;
+        height: 1.2em;
+        line-height: .9em;
+        background: #5d666f;
+        color: #fff;
+        font-size: 1.2em;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, .4) 0 0 10px;
+        border: none !important;
+    }
+    /*.list td[data-title="序號"] + td{padding-right:4em;}*/
+    .list td.title a {
+        font-size: 1.25em;
+    }
+    .list td span {
+        display: inline;
+    }
+    .list td .fileType {
+        vertical-align: middle;
+        margin: 0;
+    }
+    .list.poll tr {
+        padding: .4em .5em .3em;
+    }
+    .list.poll td {
+        margin: 0;
+    }
+    /*.list.poll td .from, .list.poll td .date{display:none;}*/
+    .list.poll td.title {
+        display: block;
+    }
+    .list.org tr {
+        overflow: hidden;
+    }
+    .list.org td, .list.org .org2nd td, .list.org tr:last-child td {
+        display: inline-block;
+        border: none;
+        line-height: 48px;
+    }
+    .list.org .org2nd td:first-child {
+        padding-left: 8px;
+        font-size: 1em;
+    }
+    .list.org td:first-child {
+        text-align: center;
+        line-height: 1.8em;
+    }
+    .list.org td:before {
+        display: none;
+    }
+    .list.org td:first-child, .list.org .org2nd td:first-child, .list.org tr:last-child td:first-child {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .list.org td:last-child {
+        float: right;
+    }
+    .list.schedule {
+        margin: 1em 0;
+    }
+    .list.schedule table {
+        border-collapse: collapse;
+    }
+    .schedule table caption {
+        font-size: 1em;
+        margin-top: .5em;
+    }
+    .navPrev {
+        left: 3%;
+    }
+    .navNext {
+        right: 3%;
+    }
+    .list.schedule th {
+        display: none;
+    }
+    .list.schedule td, .list.schedule table tr:last-child td {
+        display: block;
+        border: none;
+    }
+    .list.schedule td.date {
+        border-bottom: 1px solid #999 !important;
+        background: #f2f6f7;
+    }
+    .list.schedule td.date em {
+        display: inline-block;
+        margin: .1em .6em 0 0;
+    }
+    .list.schedule td:before {
+        display: none;
+    }
+    .list.schedule td ul li a {
+        padding: .5em .5em .4em;
+    }
+    .nextPage {
+        display: inline;
+        font-size: 0;
+    }
+    .list .dsIcon {
+        display: inline-block;
+    }
+    .list .dsIcon li a {
+        padding: 0;
+    }
+    .numb {
+        list-style: none;
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #3f4534;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: right;
+        margin: 0 .4em 0 0em;
+        padding-left: 10px;
+    }
+}
+
+.goCenter {
+    margin-left: -480px;
+    height: 1.8em;
+    line-height: 1.8em;
+    display: none;
+}

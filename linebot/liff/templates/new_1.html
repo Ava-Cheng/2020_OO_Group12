@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=1">
+
+<head>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta charset="UTF-8">
+    <!-- css -->
+    <link rel="stylesheet" href="{{gsc_url}}/css/style.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/icon.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/header.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/center.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/footer.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/sidebar.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/cp.css">
+    <!-- css -->
+    <title>防疫新生活</title>
+</head>
+
+<body>
+    <a id="goCenter" class="goCenter" href="#center" tabindex="0">按Enter到主內容區</a>
+    <header id="header" class="header">
+        <noscript>
+            『您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態』
+        </noscript>
+        <h3>最新消息</h3>
+    </header>
+    <section class="navbar">
+        <!--行動版才有，取代瀏覽路徑-->
+        <h3 style="padding-left: 0px;">防疫新生活</h3>
+        <div class="back">
+            <a href="javascript:history.go(-1)">返回</a>
+        </div>
+        <noscript>
+            <div class="back">
+                『您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態』
+            </div>
+        </noscript>
+    </section>
+    <div class="header_placeholder"></div>
+   
+    <div class="center" id="center">
+        <!-- CP Start -->
+        <article id="cpArticle" class="cpArticle">
+            <!-- 因為無障礙人工檢測說 這裡的資訊會跟H2 區塊重複, 所以 IMAGE 的 ALT 只有在 圖片上的說明跟TITLE 不一樣時才要顯示-->
+            <figure>
+                <img id="slider" src="{{gsc_url}}/img/new_1.png" alt="" width="400">
+                <figcaption>防疫新生活
+                </figcaption>
+            </figure>
+
+            <p>
+                因應防疫安全考量，於『疫情期間』敬請信眾體恤務必遵守配合共體時艱。<br>
+                1、 2020/12/01起，出入八大類場所應佩戴口罩，未佩戴且勸導不聽者，由地方政府裁罰新臺幣3千元以上、1萬5千元以下罰鍰。<br>
+                2、 為提升自主防疫，入廟前，請使用酒精噴霧機，進行雙手消毒。<br>
+                3、 本宮廟門開放時間為06:00-22:00。<br>
+                4、 信眾各廳參拜，請保持適當社交距離。<br>
+            </p>
+        </article>
+        <!-- CP Start -->
+        <section class="pubInfo">
+            <ul>
+                <li style="border-bottom:none">
+                    發布日期：
+                    <em>2020-04-11 08:49</em>
+                </li>
+            </ul>
+        </section>
+        <div class="footer_placeholder"></div>
+    </div>
+    <footer class="footer">
+        <button type="button" class="fatfootCtrl">收合</button><span class="hint">按enter鍵可展開或收合次選單，按tab鍵往下游走</span>
+        <section id="footer_info">
+            <p><span>Copyright © 2021</span></p>
+        </section>
+    </footer>
+    <div class="overlay" style="display: none; opacity: 0.5;"></div>
+    <button type="button" class="goTop" title="至頁頂" style="display: none; opacity: 1;"></button>
+    <script>
+        let _window = $(window)
+            , ww = _window.width()
+            , wh = _window.height()
+            , _body = $('body')
+            , _header = $('.header')
+            , _menu = _header.find('.menu')
+            , hh = _header.outerHeight(true)
+            , _search = $('.search')
+            , _footer = $('.footer')
+            , wwNormal = 1000
+            , wwMedium = 800
+            , wwSmall = 600
+            , wwxs = 420;
+        $(document).ready(function () {
+            $('html').removeClass('no-js');
+            let _goTop = $('.goTop');
+            _goTop.on('click keydown', function () {
+                $('html,body').stop(true, false).animate({
+                    scrollTop: 0
+                }, 700, function () {
+                    $('.goCenter').focus();
+                });
+            });
+            _window.scroll(function () {
+                if ($(this).scrollTop() > 250) {
+                    _goTop.stop(true, false).fadeIn('fast');
+                } else {
+                    _goTop.stop(true, false).fadeOut('fast');
+                }
+            });
+            $('a.goCenter').keydown(function (e) {
+                if (e.which == 13) {
+                    $('.goCenter').focus();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

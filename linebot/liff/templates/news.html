@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=1">
+<meta charset="UTF-8">
+
+<head>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="{{gsc_url}}/css/style.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/icon.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/header.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/center.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/footer.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/sidebar.css">
+    <link rel="stylesheet" href="{{gsc_url}}/css/dialog.css">
+    <!-- css -->
+    <title>訊息公告</title>
+</head>
+
+<body>
+    <div class="Wrapper">
+        <a id="goCenter" class="goCenter" href="#center" tabindex="0">按Enter到主內容區</a>
+        <header id="header" class="header">
+            <noscript>
+                『您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態』
+            </noscript>
+			<h3>最新消息</h3>
+		</header>
+        <section class="navbar">
+            <!--行動版才有，取代瀏覽路徑-->
+            <h3 style="padding-left: 0px;">訊息公告</h3>
+            <div class="back">
+                <a href="javascript:history.go(-1)">返回</a>
+            </div>
+            <noscript>
+                <div class="back">
+                    『您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態』
+                </div>
+            </noscript>
+        </section>
+        <div class="header_placeholder"></div>
+        <div class="center" id="center">
+            <div id="ad_dialog" class="modal fade z-10000" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">您已閒置一段時間囉~</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>推薦最新消息</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal"
+                                onclick="news()">最新消息</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                onclick="dialogTimeclose()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="list">
+                <ul>
+                    <li>
+                        <a href="{{liff_url}}?pageid=new_1" title="防疫新生活" target="_self">
+                            <span class="numb">1</span>防疫新生活
+                            <span class="date">2020-04-11</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        
+    </div>
+    <footer class="footer" style="margin-top: 0px;">
+        <button type="button" class="fatfootCtrl">收合</button><span class="hint">按enter鍵可展開或收合次選單，按tab鍵往下游走</span>
+        <section id="footer_info">
+            <p><span>Copyright © 2021</span></p>
+        </section>
+    </footer>
+    <div class="overlay" style="display: none; opacity: 0.5;"></div>
+    <button type="button" class="goTop" title="至頁頂" style="display: none; opacity: 1;"></button>
+    <script>
+        var _window = $(window),
+            ww = _window.width(),
+            wh = _window.height(),
+            _body = $('body'),
+            _header = $('.header'),
+            _menu = _header.find('.menu'),
+            hh = _header.outerHeight(true),
+            _search = $('.search'),
+            _footer = $('.footer'),
+            wwNormal = 1000,
+            wwMedium = 800,
+            wwSmall = 600,
+            wwxs = 420;
+        $(document).ready(function () {
+            $('html').removeClass('no-js');
+            var _goTop = $('.goTop');
+            _goTop.on('click keydown', function () {
+                $('html,body').stop(true, false).animate({
+                    scrollTop: 0
+                }, 700, function () {
+                    $('.goCenter').focus();
+                });
+            });
+            _window.scroll(function () {
+                if ($(this).scrollTop() > 250) {
+                    _goTop.stop(true, false).fadeIn('fast');
+                } else {
+                    _goTop.stop(true, false).fadeOut('fast');
+                }
+            });
+            $('a.goCenter').keydown(function (e) {
+                if (e.which == 13) {
+                    $('.goCenter').focus();
+                }
+            });
+        });
+    </script>
+    <script>
+        var Today = new Date();
+        $('#date').text(Today.getFullYear() + " 年 " + (Today.getMonth() + 1) + " 月 " + Today.getDate() + " 日");
+    </script>
+    <script type="text/javascript">
+
+        // var showSecondsNum = document.getElementById('seconds-number');
+        var showDialogTimeNum = document.getElementById('dialog-time');
+        var defaultNum = 30;
+        var maxTime = defaultNum;
+        var intervalId;
+
+        // showSecondsNum.innerHTML = maxTime;
+
+        var time = maxTime;
+
+        $('body').on('keydown mousemove mousedown', function (e) {
+            time = maxTime; // Reset
+        });
+        runSetInterval();
+
+        function runSetInterval() {
+            intervalId = setInterval(function () {
+                time--;
+                // showSecondsNum.innerHTML = time;
+                if (time <= 0) {
+                    ShowInvalidLoginMessage();
+                    clearInterval(intervalId);
+                }
+            }, 1000)
+        }
+        $('#ad_dialog').on('hide.bs.modal', function () {
+            // alert('Modal Close');
+            dialogTimeclose();
+            runSetInterval();
+        });
+
+        function dialogTimeclose() {
+            time = defaultNum;
+        }
+
+        function ShowInvalidLoginMessage() {
+            // alert("");
+            $('#ad_dialog').modal('show');
+        }
+        function news() {
+            window.location.href = "{{liff_url}}?pageid=new_1";
+
+        }
+    </script>
+</body>
+
+</html>

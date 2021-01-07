@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height,
+      initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{gsc_url}}/css/registered.css">
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.0/dist/tw-city-selector.min.js"></script>
+    <title>信徒註冊</title>
+  </head>
+
+  <body>
+    <div id="form_div">
+      <div id="title">信徒註冊</div>
+      <form class="needs-validation" id="form" novalidate
+        onsubmit=form_submit(event)>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="inputEmail4" class="form_lable">姓名：</label>
+            <input type="text" class="form-control" id="inputname"
+              placeholder="請輸入您的姓名" oninput= name_input(event) required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="inputAddress" id="birthday_label">生日：</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="inputAddress">民國年</label>
+            <select id="year" class="form-control" onchange=changeyear(event)>
+            </select>
+          </div>
+          <div class="form-group col">
+            <label for="inputAddress">月</label>
+            <select id="month" class="form-control" onchange=changemonth(event)>
+            </select>
+          </div>
+          <div class="form-group col">
+            <label for="inputAddress">日</label>
+              <select id="day" class="form-control" onchange=changeday(event)>
+            </select>
+          </div>
+        </div>     
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="inputSex">性別：</label>
+            <select class="form-control col-4" name="sex" id="sex">
+              <option value="Man" selected="true">男</option>
+              <option value="Ms">女</option>
+            </select>
+          </div>
+        </div> 
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck"
+              required>
+            <label class="form-check-label" for="gridCheck">
+              <div id="agree">請確認資料是否正確，無法再作修改。</div>
+            </label>
+          </div>
+        </div>
+        <div id="submit_botton_div">
+          <button type="submit" class="btn btn-primary" id="button_submit">送出資料</button>
+          <div>
+          </form>
+        </div>
+        <input type="hidden" value="{{userid}}" id="userid"></input>
+        <script>
+          var userid = document.getElementById("userid").value;
+          // 確認是否有註冊過
+          var request={'api_name':'user_check',"user_id":userid}
+          fetch('{{DB_proxy}}',{
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body:JSON.stringify(request),
+          })
+          .then((response) => response.json())
+          .then((responseData) => {
+            if (responseData['status']=='Exist') {
+              alert("已經註冊過囉，請點選登入。");
+              window.close();
+            } 
+          })
+          .catch((error) => {
+              alert("系統發生錯誤!!我們將盡力修復。");
+          })
+
+          new TwCitySelector();
+          function filter(str) { 
+              var pattern=/[`~!@#$^&*()=|{}':;',\\\[\]\.<>\/?~＝@#￥……&*（）——|{}〝】'；：""'。，〝？]/g;
+              return str.replace(pattern,"");
+          }
+
+          function name_input(event){
+            var filter_text = filter(document.getElementById("inputname").value);
+            document.getElementById("inputname").value = filter_text;
+          }
+
+          function form_submit(){
+            event.preventDefault();
+            event.stopPropagation();
+
+            const form = event.currentTarget;
+            const form_status = form.checkValidity();
+
+            document.getElementById("form").className = "was-validated";
+
+            if(form_status == true){
+              var name = document.getElementById("inputname").value
+              var year = String(parseInt(document.getElementById("year").value) + 1911)
+
+              if(parseInt(document.getElementById("month").value) < 10){
+                var month = "0" + document.getElementById("month").value;
+              }else{
+                var month = document.getElementById("month").value;
+              }
+
+              if(parseInt(document.getElementById("day").value) < 10){
+                var day = "0" + document.getElementById("day").value;
+              }else{
+                var day = document.getElementById("day").value;
+              }
+
+              var date = year + "-" + month + "-" + day;
+              var sex = document.getElementById("sex").value;
+              var request={'api_name':'user_add','name':name,'birthday':date,"sex":sex,"user_id":userid};
+
+              fetch("https://asia-east2-guanyin-mother-300200.cloudfunctions.net/DB_proxy",{
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                },
+                body:JSON.stringify(request),
+              })
+              .then((response) => response.json())
+              .then((responseData) => {
+                alert("註冊成功～歡迎您的加入。");
+                window.close();
+              })
+              .catch((error) => {
+                  alert("系統發生錯誤!!我們將盡力修復。");
+              })
+            }
+            console.log(form_status);
+          }
+
+          function  create_year(){
+            var option_year = document.getElementById("year");
+            for (let year_index = 0; year_index < 111; year_index++) {
+                  var option = document.createElement("option");
+                  option.text = year_index;
+                  option.value = year_index;
+                  option_year.appendChild(option);
+                }
+          }
+
+          function  create_month(){
+            var option_month = document.getElementById("month");
+            for (let month_index = 1; month_index < 13; month_index++) {
+                  var option = document.createElement("option");
+                  option.text = month_index;
+                  option.value = month_index;
+                  option_month.appendChild(option);
+                }
+          }
+
+          var select_day;
+          var select_year;
+          function create_day(){
+            var select_month = document.getElementById("month").value;
+            var option_day = document.getElementById("day");
+
+            if(select_month == 2 || select_month == 4 || select_month == 6 || select_month == 9 || select_month == 11){
+              if(select_month == 2){
+                if(select_year == "0"){
+                  for (let day_index = 1; day_index < 30; day_index++) {
+                    if(day_index - 1 == select_day){
+                        option.setAttribute("selected", "selected")
+                      }
+                      var option = document.createElement("option");
+                      option.text = day_index
+                      option.value = day_index
+                      option_day.appendChild(option);
+                  }
+
+                }else{
+                  for (let day_index = 1; day_index < 29; day_index++) {
+                    if(day_index - 1 == select_day){
+                        option.setAttribute("selected", "selected")
+                      }
+                      var option = document.createElement("option");
+                      option.text = day_index
+                      option.value = day_index
+                      option_day.appendChild(option);
+                  }
+                }
+              }else{
+                for (let day_index = 1; day_index < 31; day_index++) {
+                  if(day_index - 1 == select_day){
+                      option.setAttribute("selected", "selected")
+                    }
+                    var option = document.createElement("option");
+                    option.text = day_index
+                    option.value = day_index
+                    option_day.appendChild(option);
+                }
+              }
+            }else if(select_month == 1 || select_month == 3 || select_month == 5 || select_month == 7 || select_month == 8 || select_month == 10 ||select_month == 12){
+              for (let day_index = 1; day_index < 32; day_index++) {
+                  if(day_index - 1 == select_day){
+                      option.setAttribute("selected", "selected")
+                    }
+                    var option = document.createElement("option");
+                    option.text = day_index
+                    option.value = day_index
+                    option_day.appendChild(option);
+                }
+            }
+          }
+          
+          function changemonth(){
+            const dir = async function(){
+              await removeoption_day();
+              create_day();
+            }
+            dir()
+          }
+
+          function removeoption_day(){
+            var option_day = document.getElementById("day");
+            return option_day.innerHTML = "";
+          }
+
+          function changeday(){
+            select_day = document.getElementById("day").value;
+          }
+
+          function changeyear(){
+            select_year = parseInt(document.getElementById("year").value) + 1911;
+            // 是不是閏年判斷
+            if((select_year % 400 == 0) || (select_year % 4==0 && select_year % 100 !=0)){
+              select_year = "0";
+            }else{
+              select_year = "1";
+            }
+
+            const dir = async function(){
+              await removeoption_day();
+              create_day();
+            }
+
+            dir()
+          }
+
+          $( document ).ready(function() {
+            create_year();
+            create_month();
+            create_day();
+          });
+      </script>
+  </body>
+</html>

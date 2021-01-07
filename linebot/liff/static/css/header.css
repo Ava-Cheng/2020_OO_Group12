@@ -1,0 +1,158 @@
+#header {
+    height: 44px;
+    background: #086f9e;
+}
+
+.header_placeholder {
+    height: 100px;
+}
+
+#header .toggle-btn {
+    /* position: fixed;
+    top :0; */
+    text-align: center;
+    vertical-align: top;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 32px;
+}
+
+#header .toggle-btn.active {
+    display: none;
+}
+
+button {
+    line-height: 2.4em;
+    border: none;
+    cursor: pointer;
+    margin: 0 0 4px;
+    vertical-align: top;
+    outline: none;
+}
+
+/* 最新消息 */
+
+.navbar {
+    font-family: Helvetica, Arial, '微軟正黑體', sans-serif;
+    font-size: 1.1rem;
+    position: fixed;
+    /* padding: 0 48px; */
+    min-height: 3.2em;
+    background: #086591;
+    color: #fff;
+    margin-top: 44px;
+    z-index: 1;
+    width: 100vw;
+    overflow: hidden;
+    height: 56.31px;
+    white-space: nowrap;
+    text-decoration: none;
+    padding-right: 6px;
+}
+
+.header h3 {
+    margin-top: 6px;
+    text-align: center;
+}
+
+.navbar h3 {
+    padding-left: 44px;
+    margin: 0px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.navbar .back a:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    transform: rotate(45deg);
+    border-top: none;
+    border-right: none;
+    left: 50%;
+    top: 50%;
+    margin: -11px auto auto -5px;
+}
+
+.back {
+    font-family: Helvetica, Arial, '微軟正黑體', sans-serif;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 100%;
+    font-size: 0;
+    /* background: #377476; */
+    background: #086591;
+}
+
+.header .searchCtrl {
+    background: none;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    right: 0px;
+    top: 0px;
+}
+
+.searchCtrl:before {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    top: 20%;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.searchCtrl:after {
+    width: 10px;
+    height: 4px;
+    top: 65%;
+    background: #fff;
+    transform: rotate(45deg);
+    left: 58%;
+    top: 63%;
+    border-radius: 0 2px 2px 0;
+}
+
+.searchCtrl:before, .searchCtrl:after {
+    content: '';
+    position: absolute;
+}
+
+.header .search {
+    top: 44px;
+}
+
+.header .search form {
+    display: block;
+    margin: 0 auto;
+}
+
+.search .keywordHot {
+    display: none;
+}
+
+.header .search input[type="text"] {
+    width: calc(100% - 7em);
+}
+
+.header {
+    height: auto;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+
+.header h1 {
+    height: 44px;
+}

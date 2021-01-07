@@ -1,0 +1,17 @@
+# nodejs套件包
+node_modules
+packiage-lock.json
+
+# 環境設定檔案
+.env
+
+# 合成圖片
+linebot/picture_processing/static/images/*.png
+
+# 機密文件
+linebot/line_webhook/config/config.ini
+linebot/DB_proxy/config/config.ini
+linebot/agent_message_event/config/config.ini
+
+# Mac
+.DS_Store

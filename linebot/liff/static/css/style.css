@@ -1,0 +1,43 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.Wrapper {
+    min-height: 100%;
+}
+
+.footer {
+    /* clear: both; */
+    /* 清除浮動元素格式 */
+    position: relative;
+    /* margin-top: -217px; */
+    /* Footer 高度的負值 */
+    height: 217px;
+}
+
+.overlay {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    /* margin-left: 200px; */
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    background-color: #000;
+    z-index: 8888;
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+}

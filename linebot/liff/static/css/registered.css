@@ -1,0 +1,57 @@
+#form_div{
+    width:80%;
+    margin-left: 10%;
+    margin-top:3%
+}
+
+.form_lable::before{
+    content: ' *';
+    color: red;
+    font-size: 150%;
+    padding-right: 8px;
+    position: relative;
+    top: 8px;
+}
+
+#agree{
+    text-align: left;
+    font-size: 14px;
+}
+
+#button_submit{
+    position: relative;
+    left: 33%;
+    margin-bottom: 10px;
+}
+
+input[type="date"]:before{
+    content: attr(placeholder);
+}
+
+select[name="district"] {
+    margin-left: 10px;
+    width:92%;
+  }
+
+#tw-selector{
+    width: 80%;
+    display:inherit;
+    padding-left:2%;
+}
+
+.help-text::before{
+    content: ' *';
+    color: red;
+    font-size: 150%;
+    padding-right: 8px;
+    position: relative;
+    top: 6px;
+}
+
+#title{
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    text-align:center;
+}

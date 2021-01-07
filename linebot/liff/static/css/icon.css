@@ -1,0 +1,9 @@
+.icon {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    text-align: left;
+    margin-right: 18px;
+    filter: invert(100%);
+    margin-bottom: 4px;
+}

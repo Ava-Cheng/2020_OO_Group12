@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>數位光明燈</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+    <link rel="stylesheet" href="{{gsc_url}}/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="{{gsc_url}}/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <!-- Argon CSS -->
+    <link rel="stylesheet" href="{{gsc_url}}/assets/css/argon.css?v=1.2.0" type="text/css">
+</head>
+
+<body>
+    <!-- Sidenav -->
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <!-- Topnav -->
+        <nav class="navbar navbar-top navbar-expand navbar-dark bg-default border-bottom">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-center" style="font-size:24px;color:white;">
+                    數位光明燈
+                </div>
+            </div>
+        </nav>
+        <!-- Header -->
+        <!-- Header -->
+        <div class="header pb-6 d-flex align-items-center"
+            style="min-height: 200px; background-image: url({{gsc_url}}/assets/img/theme/light.jpeg); background-size: cover; background-position: center top;">
+            <!-- Mask -->
+            <span class="mask bg-white opacity-6"></span>
+        </div>
+        <!-- Page content -->
+        <div class="container-fluid mt--6">
+            <div class="row">
+
+                <div class="col-xl-8 order-xl-1">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+                                    <h3 class="mb-0">個人資料 </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- {% if error %} -->
+                            <p class=error><strong style="color:red" id="error"></strong>
+                                <!-- {% endif %} -->
+                                <!-- <form method="post"> -->
+                            <h6 class="heading-small text-muted mb-4">請輸入信徒您的資料</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-username">姓名：</label>
+                                            <input onkeyup="value=value.replace(/[^\一-\龥]/g,'')" 　　
+                                                onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\一-\龥]/g,''))"
+                                                id="name" maxlength='5' type="text" name="name" class="form-control"
+                                                placeholder="">
+                                            <!-- <input id="name"maxlength='5'type="text" name="name" class="form-control" placeholder=""> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-username">性別：</label>
+                                            <select class="form-control col-4" name="sex" id="sex">
+                                                <option value="男" selected="true">男</option>
+                                                <option value="女">女</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">生日</label>
+                                    <div class="row">
+                                        <select name="year"id="year" class="form-control col-3"onchange=changeyear(event)>
+                                        </select>
+                                        <select class="form-control col-4" id="month" name="month"
+                                            style="margin-left:6px"onchange=changemonth(event)>
+                                        </select>
+                                        <select class="form-control col-4" id="day" name="day" style="margin-left:6px"onchange=changeday(event)>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="confirm">
+                                    <center><button type="submit" class="btn bg-info" id="button"
+                                            style="margin:0px auto;margin-top: 12px;">繼續</button></center>
+                                </div>
+                            </div>
+
+                            <hr class="my-4" />
+                            <input type="hidden" value="{{userid}}" id="userid"></input>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="footer pt-0">
+                <div class="row align-items-center justify-content-lg-between">
+                    <div class="col-lg-6">
+                        <div class="copyright text-center  text-lg-left  text-muted">
+                            &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
+                                target="_blank">Creative
+                                Tim</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com/presentation" class="nav-link"
+                                    target="_blank">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
+                                    class="nav-link" target="_blank">MIT License</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Argon Scripts -->
+    <!-- Core -->
+    <script src="{{gsc_url}}/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="{{gsc_url}}/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{gsc_url}}/assets/vendor/js-cookie/js.cookie.js"></script>
+    <script src="{{gsc_url}}/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="{{gsc_url}}/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <!-- Argon JS -->
+    <script src="{{gsc_url}}/assets/js/argon.js?v=1.2.0"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            create_year();
+            create_month();
+            create_day();
+            $("#button").click(function () {
+                var text = $("#name").val();
+                var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？%]");
+                var result = text.match(pattern);
+                if (!result) {
+                    set();
+                } else {
+                    // alert("含有特殊字元")
+                    $("#error").val("含有特殊字元");
+                    return
+                }
+            });
+        });
+        function create_year() {
+                var option_year = document.getElementById("year");
+                for (let year_index = 0; year_index < 111; year_index++) {
+                    var option = document.createElement("option");
+                    option.text = year_index;
+                    option.value = year_index;
+                    option_year.appendChild(option);
+                }
+            }
+
+            function create_month() {
+                var option_month = document.getElementById("month");
+                for (let month_index = 1; month_index < 13; month_index++) {
+                    var option = document.createElement("option");
+                    option.text = month_index;
+                    option.value = month_index;
+                    option_month.appendChild(option);
+                }
+            }
+
+            var select_day;
+            var select_year;
+            function create_day() {
+                var select_month = document.getElementById("month").value;
+                var option_day = document.getElementById("day");
+
+                if (select_month == 2 || select_month == 4 || select_month == 6 || select_month == 9 || select_month == 11) {
+                    if (select_month == 2) {
+                        if (select_year == "0") {
+                            for (let day_index = 1; day_index < 30; day_index++) {
+                                if (day_index - 1 == select_day) {
+                                    option.setAttribute("selected", "selected")
+                                }
+                                var option = document.createElement("option");
+                                option.text = day_index
+                                option.value = day_index
+                                option_day.appendChild(option);
+                            }
+
+                        } else {
+                            for (let day_index = 1; day_index < 29; day_index++) {
+                                if (day_index - 1 == select_day) {
+                                    option.setAttribute("selected", "selected")
+                                }
+                                var option = document.createElement("option");
+                                option.text = day_index
+                                option.value = day_index
+                                option_day.appendChild(option);
+                            }
+                        }
+                    } else {
+                        for (let day_index = 1; day_index < 31; day_index++) {
+                            if (day_index - 1 == select_day) {
+                                option.setAttribute("selected", "selected")
+                            }
+                            var option = document.createElement("option");
+                            option.text = day_index
+                            option.value = day_index
+                            option_day.appendChild(option);
+                        }
+                    }
+                } else if (select_month == 1 || select_month == 3 || select_month == 5 || select_month == 7 || select_month == 8 || select_month == 10 || select_month == 12) {
+                    for (let day_index = 1; day_index < 32; day_index++) {
+                        if (day_index - 1 == select_day) {
+                            option.setAttribute("selected", "selected")
+                        }
+                        var option = document.createElement("option");
+                        option.text = day_index
+                        option.value = day_index
+                        option_day.appendChild(option);
+                    }
+                }
+            }
+
+            function changemonth() {
+                const dir = async function () {
+                    await removeoption_day();
+                    create_day();
+                }
+                dir()
+            }
+
+            function removeoption_day() {
+                var option_day = document.getElementById("day");
+                return option_day.innerHTML = "";
+            }
+
+            function changeday() {
+                select_day = document.getElementById("day").value;
+            }
+
+            function changeyear() {
+                select_year = parseInt(document.getElementById("year").value) + 1911;
+                // 是不是閏年判斷
+                if ((select_year % 400 == 0) || (select_year % 4 == 0 && select_year % 100 != 0)) {
+                    select_year = "0";
+                } else {
+                    select_year = "1";
+                }
+
+                const dir = async function () {
+                    await removeoption_day();
+                    create_day();
+                }
+
+                dir()
+            }
+        function set() {
+            if ($('#name').val() == '') {
+                $('#error').text("Error:未輸入姓名");
+                // alert("123");
+            } else if (document.all.year.value == '') {
+                $('#error').text('Error:未輸入年份');
+            }
+            else if (window.localStorage) {
+                let userid = document.getElementById("userid").value;
+                //存储变量的值
+                localStorage.name = document.all.name.value;
+                localStorage.sex = document.all.sex.value;
+                localStorage.year = document.all.year.value;
+                localStorage.month = document.all.month.value;
+                localStorage.day = document.all.day.value;
+                localStorage.user_id = document.all.userid.value;
+                location.href = '{{liff_url}}'+'?pageid=select_light&user_id='+userid;
+            } else {
+                alert("NOT SUPPORT");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+.gcloudignore
+.git
+.gitignore
+.DS_Store
