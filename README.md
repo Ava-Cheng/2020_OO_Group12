@@ -3,6 +3,7 @@
 
 
 
+
 ### 專題題目：觀音媽達康
 
 ### 專案組成
@@ -12,9 +13,8 @@
 ### 分工表
 |鄭育存|戴珮筑|
 |:----:|:----:|
-|系統架構/流程規劃|介面設計|
+|系統架構/流程規劃與設計|介面設計|
 |文件撰寫、PPT製作|文件撰寫、PPT製作|
-|資料庫、API設計|數位農民曆實作|
 |LineBot實作|數位光明燈實作|
 |報告|報告|
 
@@ -200,12 +200,12 @@
 ![](https://i.imgur.com/fX1n5iZ.png)
 ![](https://i.imgur.com/h80gLef.png)
 ![](https://i.imgur.com/WGIl1td.png)
-![](https://i.imgur.com/qCVWjVh.png)
-![](https://i.imgur.com/BYWTf5k.png)
-![](https://i.imgur.com/dgAaOiL.png)
-![](https://i.imgur.com/uD5cApN.png)
-![](https://i.imgur.com/ZoE136j.png)
-![](https://i.imgur.com/SRTVX3V.png)
+![](https://i.imgur.com/b3ammPh.png)
+![](https://i.imgur.com/Jz0kVvY.png)
+![](https://i.imgur.com/ZbGiPUR.png)
+![](https://i.imgur.com/vfHGtQq.png)
+![](https://i.imgur.com/RzwSqJR.png)
+![](https://i.imgur.com/w6bnzZ1.png)
 ![](https://i.imgur.com/UCYZclH.png)
 ![](https://i.imgur.com/anD7B8A.png)
 ![](https://i.imgur.com/R4atgw1.png)
@@ -215,4 +215,3 @@
 
 ### 實體關係圖(entity-relationship diagram, ERD)
 ![](https://i.imgur.com/tpoozp7.jpg)
-
